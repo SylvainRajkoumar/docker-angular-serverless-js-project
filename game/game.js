@@ -6,14 +6,10 @@ const getRandomInt = maxValue => {
   return Math.floor(Math.random() * Math.floor(maxValue));
 };
 
-const getSpeedBoost = async () => {
-  let speedBoost = null;
-  await requestPromise(
+const getSpeedBoost = () => {
+  return requestPromise(
     {body: {}, json: true, method: 'GET', uri: serverlessUrl + 'provideBoost'})
-    .then(body => {
-      speedBoost = body;
-    });
-  return speedBoost;
+    .then(body => body);
 };
 
 const vehiclesInitialization = async () => {
@@ -88,6 +84,7 @@ const updateVehiclePath = async (name, path) => {
     uri: serverlessUrl + 'updateVehiclePath'
   });
 };
+
 const updateVehicleSpeed = async (name, speed) => {
   await requestPromise({
     body: {name, speed},
@@ -164,20 +161,17 @@ const vehiclesPathFinding = (vehicles, cities) => {
   }
 };
 
-const checkTownProximity = vehicles => {
-  for (let i = 0; i < vehicles.length; i++) {
-    const vehicle = vehicles[i];
-    const nextCityPosition = vehicle.path[0];
-    if (isNear(vehicle.position, nextCityPosition)) {
-      const speedBoost = getSpeedBoost();
-      updateVehicleSpeed(vehicle.name, speedBoost);
-      vehicle.path.shift();
-      updateVehiclePath(vehicle.name, vehicle.path);
-    }
-
-    if (vehicle.path.length === 0) {
-      gameInitialization();
-    }
+const checkTownProximity = async vehicles => {
+  const vehicle = vehicles[0];
+  const nextCityPosition = vehicle.path[0];
+  if (isNear(vehicle.position, nextCityPosition)) {
+    const speedBoost = await getSpeedBoost();
+    updateVehicleSpeed(vehicle.name, speedBoost);
+    vehicle.path.shift();
+    updateVehiclePath(vehicle.name, vehicle.path);
+  }
+  if (vehicle.path.length === 0) {
+    gameInitialization();
   }
 };
 

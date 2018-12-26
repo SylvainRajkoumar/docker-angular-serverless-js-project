@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
   cities = [];
   vehiclesPosition = [];
   vehiclesPath = [];
+  vehicleSpeed = 0;
+  remainingCities = 0;
 
   getCities = () => {
     this.http.get(serverlessUrl + 'getCities',{observe: 'response'})
@@ -33,6 +35,8 @@ export class AppComponent implements OnInit{
         for (let i = 0; i < 1; i++){
           this.vehiclesPosition.push(resp.body[i].position);
           this.vehiclesPath.push(resp.body[i].path);
+          this.vehicleSpeed = resp.body[i].speed;
+          this.remainingCities = resp.body[i].path.length;
         }
       });
   };
@@ -45,19 +49,20 @@ export class AppComponent implements OnInit{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < 10; i++){
       ctx.beginPath();
-      ctx.arc(this.cities[i][0]*6,this.cities[i][1]*6,10,0,2*Math.PI);
+      ctx.arc(this.cities[i][0]*6,this.cities[i][1]*6,15,0,2*Math.PI);
+      ctx.font = "15px Roboto";
+      ctx.fillText(i.toString(), this.cities[i][0]*6 - 5, this.cities[i][1]*6 + 5);
       ctx.stroke();
     }
     for (let i = 0; i < 1; i++){
       ctx.beginPath();
-      ctx.arc(this.vehiclesPosition[i][0]*6,this.vehiclesPosition[i][1]*6,5,0,2*Math.PI);
+      ctx.arc(this.vehiclesPosition[i][0]*6,this.vehiclesPosition[i][1]*6,5,
+        0,2*Math.PI);
       ctx.stroke();
     }
   };
 
   constructor(public http: HttpClient) {
-
-
   }
 
   ngOnInit(): void {

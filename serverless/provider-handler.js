@@ -1,5 +1,5 @@
 const provideBoost = () => {
-  return Math.floor(Math.random() * (5 - 4 + 1)) + 4;
+  return Math.floor(Math.random() * (6 - 3 + 1)) + 3;
 };
 
 const provideBoostHandler = async msg => ({

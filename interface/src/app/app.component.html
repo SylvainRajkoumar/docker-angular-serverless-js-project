@@ -1,16 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center;">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <div>Vehicle speed {{ vehicleSpeed }}</div>
-  <div>Remaining cities {{ remainingCities }}</div>
-  <canvas id="myCanvas" width="600" height="600"
-          style="border:1px solid #d3d3d3;">
-    Your browser does not support the canvas element.
-  </canvas>
-</div>
-
-
-
+<html >
+<body style="background-color:#2a2a2a;margin:0px;color:white;
+    font-family: 'Roboto Medium'">
+  <div style="text-align:center;">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <div>Vehicle speed {{ vehicleSpeed }}</div>
+    <div>Remaining cities {{ remainingCities }}</div>
+    <canvas id="myCanvas" width="600" height="600"
+            style="border:1px solid #d3d3d3;background-color:#545454;
+            border-radius: 7px;">
+    </canvas>
+  </div>
 <router-outlet></router-outlet>
+</body>
+</html>

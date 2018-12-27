@@ -10,7 +10,7 @@ const serverlessUrl = 'http://192.168.99.100:3000/';
 })
 
 export class AppComponent implements OnInit{
-  title = 'interface de merde';
+  title = '';
   cities = [];
   vehiclesPosition = [];
   vehiclesPath = [];
@@ -51,13 +51,20 @@ export class AppComponent implements OnInit{
       ctx.beginPath();
       ctx.arc(this.cities[i][0]*6,this.cities[i][1]*6,15,0,2*Math.PI);
       ctx.font = "15px Roboto";
-      ctx.fillText(i.toString(), this.cities[i][0]*6 - 5, this.cities[i][1]*6 + 5);
+      ctx.fillStyle = '#2a2a2a';
+      ctx.fill();
+      ctx.strokeStyle = '#2a2a2a';
       ctx.stroke();
+      ctx.fillStyle = 'white';
+      ctx.fillText(i.toString(), this.cities[i][0]*6 - 5, this.cities[i][1]*6 + 5);
     }
     for (let i = 0; i < 1; i++){
       ctx.beginPath();
       ctx.arc(this.vehiclesPosition[i][0]*6,this.vehiclesPosition[i][1]*6,5,
         0,2*Math.PI);
+      ctx.fillStyle = 'white';
+      ctx.fill();
+      ctx.strokeStyle = 'white';
       ctx.stroke();
     }
   };

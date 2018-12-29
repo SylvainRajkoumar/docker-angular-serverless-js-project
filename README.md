@@ -30,3 +30,7 @@ docker-compose down
 
 This project is licensed under the terms of the
 [MIT license](/LICENSE.md).
+
+
+Sylvain RAJKOUMAR
+Thomas BRASEY

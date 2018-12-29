@@ -2,6 +2,11 @@
 The goal of this project was an introduction to serverless, docker and angular/ember technologies.  
 In this game, a vehicle goes to every city and start again and again (with a new city layout).   
 Each time a vehicle arrive in a city, a random speed boost is given to that vehicle.  
+There are 4 services : 
+  - Game - Game Loop  
+  - Interface - Angular   
+  - Serverless - Interaction with MongoDB  
+  - db - MongoDB  
 
 ## Prerequisites (Windows)
 

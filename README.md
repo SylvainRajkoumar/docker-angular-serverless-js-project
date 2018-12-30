@@ -22,7 +22,7 @@ git clone https://github.com/SylvainRajkoumar/docker-angular-serverless-js-proje
 XO:
 * [install yarn](https://yarnpkg.com/en/docs/install#windows) (Windows)
 ```
-yarn global install xo
+yarn global add xo
 ```
 
 ## XO

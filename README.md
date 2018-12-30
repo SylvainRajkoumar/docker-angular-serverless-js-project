@@ -19,7 +19,7 @@ Install Git https://git-scm.com/download
 git clone https://github.com/SylvainRajkoumar/docker-angular-serverless-js-project  
 ```  
 
-for XO:
+XO:
 * [install yarn](https://yarnpkg.com/en/docs/install#windows) (Windows)
 ```
 yarn global install xo

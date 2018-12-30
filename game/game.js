@@ -94,6 +94,16 @@ const updateVehicleSpeed = async (name, speed) => {
   });
 };
 
+const gameInitialization = async () => {
+  await dropCollections();
+  await vehiclesInitialization();
+  await citiesInitialization(10);
+
+  const vehicles = await retrieveVehicles();
+  const cities = await retrieveCities();
+  await vehiclesPositionInitialisation(vehicles, cities);
+};
+
 const vehiclesPositionInitialisation = (vehicles, cities) => {
   for (let i = 0; i < vehicles.length; i++) {
     const randomCityPosition = cities[Math.floor(
@@ -188,16 +198,6 @@ const dropCollections = async () => {
     method: 'POST',
     uri: serverlessUrl + 'dropCityCollection'
   });
-};
-
-const gameInitialization = async () => {
-  await dropCollections();
-  await vehiclesInitialization();
-  await citiesInitialization(10);
-
-  const vehicles = await retrieveVehicles();
-  const cities = await retrieveCities();
-  await vehiclesPositionInitialisation(vehicles, cities);
 };
 
 const gameLoop = async () => {

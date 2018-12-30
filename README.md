@@ -19,6 +19,26 @@ Install Git https://git-scm.com/download
 git clone https://github.com/SylvainRajkoumar/docker-angular-serverless-js-project  
 ```  
 
+for XO:
+* [install yarn](https://yarnpkg.com/en/docs/install#windows) (Windows)
+```
+yarn global install xo
+```
+
+## XO
+Before running XO do the following steps:
+```
+cd docker-angular-serverless-js-project
+yarn install
+cd game
+yarn install
+cd ../serverless
+yarn install
+cd ../interface
+yarn install
+xo --fix
+```
+
 ## Running  
 Then you need to open the Docker Quickstart Terminal and change directory (it depends where you cloned the projet): 
 ```

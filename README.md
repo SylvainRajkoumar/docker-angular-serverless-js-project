@@ -59,7 +59,7 @@ This project is licensed under the terms of the
 [MIT license](/LICENSE.md).
 
 
-[Sylvain RAJKOUMAR](https://github.com/SylvainRajkoumar)
+[Sylvain RAJKOUMAR](https://github.com/SylvainRajkoumar)  
 [Thomas BRASEY](https://github.com/Talarn)
 
 

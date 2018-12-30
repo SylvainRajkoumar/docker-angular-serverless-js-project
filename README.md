@@ -12,8 +12,8 @@ There are 4 services :
 
 ## Prerequisites (Windows)
 
-Install Docker Toolbox https://docs.docker.com/toolbox/toolbox_install_windows/  
-Install Git https://git-scm.com/download
+* Install Docker Toolbox https://docs.docker.com/toolbox/toolbox_install_windows/  
+* Install Git https://git-scm.com/download
 
 ```
 git clone https://github.com/SylvainRajkoumar/docker-angular-serverless-js-project  

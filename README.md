@@ -53,9 +53,13 @@ You might need to use this command before running again docker-compose up
 ```
 docker-compose down  
 ```
-## License
+## License & Authors
 
 This project is licensed under the terms of the
 [MIT license](/LICENSE.md).
+
+
+[Sylvain RAJKOUMAR](https://github.com/SylvainRajkoumar)
+[Thomas BRASEY](https://github.com/Talarn)
 
 

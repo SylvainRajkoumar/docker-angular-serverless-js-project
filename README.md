@@ -36,7 +36,7 @@ cd ../serverless
 yarn install
 cd ../interface
 yarn install
-xo --fix
+xo
 ```
 
 ## Running  
